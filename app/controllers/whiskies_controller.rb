@@ -1,0 +1,2 @@
+class WhiskiesController < ApplicationController
+end
