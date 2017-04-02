@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user_id
-      redirect_to posts_path, notice: "Logged In"
+      redirect_to whiskies_path, notice: "Logged In"
     else
       render :new
     end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     if @user.update user_params
       session[:user_id] = @user.id
-      redirect_to posts_path
+      redirect_to whiskies_path
     else
       render :edit
     end

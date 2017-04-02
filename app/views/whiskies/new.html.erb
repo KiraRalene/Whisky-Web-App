@@ -1,0 +1,72 @@
+<div class = 'row'>
+
+  <div class = 'col-sm-10 col-sm-offset-1'>
+    <h1 class="title"> Create a New Whisky</h1>
+
+    <% if @whisky.errors.any? %>
+      <ul>
+        <%@whisky.errors.full_messages.each do |msg|%>
+          <li><%= msg %></li>
+        <%end%>
+      </ul>
+    <%end%>
+
+    <%= form_for @whisky do |f|%>
+      <div class="field form-group">
+        <%= f.label :name, class: 'col-sm-1 control-label' %>
+          <div class="col-sm-11">
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+        </div>
+
+      <div class = "field form-group ">
+        <%= f.label :distillery, class: 'col-sm-1' %>
+        <div class='col-sm-11'>
+          <%= f.text_field :distillery, class: 'form-control body-area' %>
+        </div>
+      </div>
+
+      <div class = "field form-group ">
+        <%= f.label :age, class: 'col-sm-1' %>
+        <div class='col-sm-11'>
+          <%= f.text_field :age, class: 'form-control body-area' %>
+        </div>
+      </div>
+
+      <div class = "field form-group ">
+        <%= f.label :cask, class: 'col-sm-1' %>
+        <div class='col-sm-11'>
+          <%= f.text_field :cask, class: 'form-control body-area' %>
+        </div>
+      </div>
+
+      <div class = "field form-group ">
+        <%= f.label :kind, class: 'col-sm-1' %>
+        <div class='col-sm-11'>
+          <%= f.text_field :kind, class: 'form-control body-area' %>
+        </div>
+      </div>
+
+      <div class = "field form-group ">
+        <%= f.label :abv, class: 'col-sm-1' %>
+        <div class='col-sm-11'>
+          <%= f.text_field :abv, class: 'form-control body-area' %>
+        </div>
+      </div>
+
+      <div class = "field form-group ">
+        <%= f.label :price, class: 'col-sm-1' %>
+        <div class='col-sm-11'>
+          <%= f.text_field :price, class: 'form-control body-area' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-1 offset-md-3">
+          <%= f.submit class: 'btn'  %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+
+</div>
