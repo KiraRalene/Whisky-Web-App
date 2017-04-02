@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402061033) do
+ActiveRecord::Schema.define(version: 20170402064819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "note_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["note_id"], name: "index_likes_on_note_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+  end
 
   create_table "notes", force: :cascade do |t|
     t.integer  "rating"
@@ -55,7 +64,20 @@ ActiveRecord::Schema.define(version: 20170402061033) do
     t.index ["user_id"], name: "index_whiskies_on_user_id", using: :btree
   end
 
+  create_table "wishes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "whisky_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_wishes_on_user_id", using: :btree
+    t.index ["whisky_id"], name: "index_wishes_on_whisky_id", using: :btree
+  end
+
+  add_foreign_key "likes", "notes"
+  add_foreign_key "likes", "users"
   add_foreign_key "notes", "users"
   add_foreign_key "notes", "whiskies"
   add_foreign_key "whiskies", "users"
+  add_foreign_key "wishes", "users"
+  add_foreign_key "wishes", "whiskies"
 end

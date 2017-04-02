@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update]
 
   resources :whiskies
+
+  resources :notes do
+    resources :likes, only: [:create, :destroy]
+  end
 end
