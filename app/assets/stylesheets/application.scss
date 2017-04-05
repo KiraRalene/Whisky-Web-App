@@ -14,3 +14,154 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ $maroon:#43050e;
+ $gold:#b2852f;
+ $off-white:#f5f0ee;
+ $yellow:#ffa100;
+
+
+//Global
+p, a, td, th, h1 {
+  color: black;
+}
+h1 {
+  font-family: 'Lora', serif;
+}
+.main-content {
+  background: url("wood_grain.jpg")
+}
+.jumbotron {
+  margin-bottom: 0px;
+}
+a:hover {
+  text-decoration: none;
+}
+.navbar.navbar-default {
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0px;
+}
+.navbar.navbar-default li a {
+  color: $gold;
+}
+
+.navbar.navbar-default .navbar-collapse {
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.navbar {
+  margin-bottom: 0px;
+  background-color: $maroon;
+}
+.nav.navbar-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+//Home Page
+ .home-jumbo {
+   background: url("whisky.jpg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 110vh;
+    color: $yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+.btn-main {
+  margin-top: 15px;
+  color:$yellow;
+  border: 2px solid $yellow;
+  border-radius: 5px;
+  background-color: rgba(1,1,1,0);
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.center-text {
+  display: block;
+  text-align: center;
+}
+//Whisky Index **ALL GLOBAL
+.secondary-jumbo {
+  background: url("whisky.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   height: 65vh;
+   color: $yellow;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.content {
+  background-color: white;
+  min-height: 100vh;
+}
+.card-image {
+  padding: 20px;
+  width: 100%;
+  border-bottom: solid 2px $maroon;
+}
+.card {
+  padding: 23px;
+}
+
+//Whisky Show
+.whisky-bottle {
+  width: 100%;
+}
+.padding {
+  padding: 60px;
+}
+.table {
+  border-bottom: solid 1px lightgrey;
+}
+//User Forms
+.form-page {
+  color: $yellow;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("whisky.jpg") no-repeat center center fixed;
+
+}
+.full-form {
+  width: 33%;
+}
+.form-control {
+  border: none;
+  -webkit-box-shadow: none;
+    box-shadow: inset none;
+  border-bottom: 2px solid $yellow;
+  border-radius: 0px;
+  background: rgba(1,1,1,0);
+  color: $gold;
+}
+.modal-content {
+  background-color: white;
+  color: black;
+  padding: 50px;
+}
+.modal-dialog {
+  width: 80vh;
+}
+h4 {
+  color: $yellow;
+}
+.modal-header {
+  border-bottom: solid grey;
+}
+.ahh {
+  margin-top: 20px;
+}

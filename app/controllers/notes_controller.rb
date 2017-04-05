@@ -26,6 +26,11 @@ class NotesController < ApplicationController
   end
 
   def show
-    @note = Note.find_by_id[:id]
+    @note = Note.find params[:id]
+  end
+
+  private
+  def note_params
+    params.require(:note).permit([:rating, :color, :nose, :palate, :description, :price])
   end
 end

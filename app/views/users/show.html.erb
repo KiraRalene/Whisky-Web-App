@@ -1,0 +1,5 @@
+<%= @user.full_name%>
+<%@notes.each do |note|%>
+  <h3><%=link_to note.whisky.name, note_path(note)%></h3>
+
+<%end%>

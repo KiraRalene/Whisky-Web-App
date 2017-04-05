@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora">
     <title>WhiskyWebApp</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +10,67 @@
   </head>
 
   <body>
+
+    <nav class="navbar navbar-default" >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#nav-collapsible-section">
+            <span class="glyphicon glyphicon-menu-hamburger">
+          </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="nav-collapsible-section">
+
+          <ul class="nav navbar-nav">
+            <li>
+              <%=link_to 'Home', root_path%>
+            </li>
+            <li>
+              <%=link_to 'Whiskies', whiskies_path%>
+            </li>
+            <li>
+              <%=link_to 'Top 10', whiskies_path%>
+            </li>
+            <li>
+              <%=link_to 'Advanced Search', new_search_path%>
+            </li>
+
+          </ul>
+
+          <ul class = "nav navbar-nav navbar-right">
+            <li>
+              <% if user_signed_in? %>
+                <li>
+                    <%=link_to "#{current_user.full_name}", user_path(current_user)%>
+                 </li>
+                 <li>
+                  <%= link_to sessions_path('Sign Out'), method: :delete do %>
+                    <span class="glyphicon glyphicon-log-in"></span>Sign Out
+                  <% end %>
+                </li>
+
+              <%else%>
+                <li>
+                  <%= link_to new_user_path('Sign Up') do %>
+                    <span class="glyphicon glyphicon-user"></span> Sign Up
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to new_session_path('Sign In') do %>
+                    <span class="glyphicon glyphicon-log-in"></span> Sign In
+                  <% end %>
+                </li>
+              <%end%>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

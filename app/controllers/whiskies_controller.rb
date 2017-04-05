@@ -3,11 +3,12 @@ class WhiskiesController < ApplicationController
   # before_action(:authorize, only: [:edit, :destroy, :update])
   def show
     @whisky = Whisky.find params[:id]
+    @note = Note.new
 
   end
 
   def index
-    @whiskies = Whisky.all
+    @whiskies = Whisky.search(params[:search])
   end
 
   def new
