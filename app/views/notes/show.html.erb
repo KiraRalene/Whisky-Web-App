@@ -1,6 +1,25 @@
-<p><%= @note.whisky.name%></p>
-<p><%= @note.rating%></p>
-<p><%= @note.color%></p>
-<p><%= @note.palate%></p>
-<p><%= @note.description%></p>
-<p><%= @note.price%></p>
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 content">
+
+      <div class="row">
+        <div class="col-sm-5 padding">
+          <%if @note.whisky.image.thumb.url%>
+            <%=image_tag @note.whisky.image.thumb.url , :class=>'whisky-bottle'%>
+          <%else%>
+            <%=image_tag ("aberlour12yr.jpg") , :class=>'whisky-bottle'%>
+          <%end%>
+        </div>
+        <div class="col-sm-7 padding">
+          <h1><%= @note.whisky.name%></h2>
+            <p>Rating: <%= @note.rating%></p>
+            <p>Color: <%= @note.color%></p>
+            <p>Nose: <%= @note.nose%></p>
+            <p>Palate: <%= @note.palate%></p>
+            <p>Description: <%= @note.description%></p>
+            <p>Price: <%= @note.price%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

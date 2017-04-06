@@ -2,7 +2,6 @@ class SearchesController < ApplicationController
 
   def new
     @search = Search.new
-    @kind = Whisky.uniq.pluck(:kind)
   end
 
   def create
@@ -12,6 +11,7 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
+  
   end
 
   private

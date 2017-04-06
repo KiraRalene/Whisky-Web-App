@@ -1,6 +1,6 @@
 <div class="jumbotron secondary-jumbo">
   <div>
-    <h1>Whiskies</h1>
+    <h1 class="fade-in">Whiskies</h1>
   </div>
 </div>
 
@@ -24,18 +24,23 @@
           </div>
         </div>
 
+        <div class="row row-eq-height">
+          <%@whiskies.each do |whisky|%>
+            <div class="col-sm-4 ">
+              <div class="card">
+                <%if whisky.image.thumb.url%>
+                  <%=image_tag whisky.image.thumb.url, :class=>'card-image img-zoom'%>
+                <%else%>
+                  <%=image_tag ("aberlour12yr.jpg") , :class=>'card-image img-zoom'%>
+                <%end%>
+                <div class="card-block">
+                  <h4><%=link_to whisky.name, whisky_path(whisky)%></h4>
 
-        <%@whiskies.each do |whisky|%>
-          <div class="col-sm-4">
-            <div class="card">
-              <%=image_tag ('aberlour12yr.jpg'), :class=>'card-image'%>
-              <div class="card-block">
-                <h4><%=link_to whisky.name, whisky_path(whisky)%></h4>
-
+                </div>
               </div>
             </div>
-          </div>
-        <%end%>
+          <%end%>
+        </div>
 
       </div>
       <%= form_tag whiskies_path, :method  => 'get' do %>

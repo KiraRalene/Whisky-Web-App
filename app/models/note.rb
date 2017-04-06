@@ -5,4 +5,6 @@ class Note < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
 
+  has_one :rating
+
 end

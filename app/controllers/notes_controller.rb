@@ -11,6 +11,7 @@ class NotesController < ApplicationController
     @note = Note.new note_params
     @note.user = current_user
     @note.whisky = @whisky
+    # @note.rating.score = params[:note][:rating].to_i
     if @note.save
       redirect_to note_path(@note), notice: 'Note created!'
     else
@@ -31,6 +32,6 @@ class NotesController < ApplicationController
 
   private
   def note_params
-    params.require(:note).permit([:rating, :color, :nose, :palate, :description, :price])
+    params.require(:note).permit([:color, :nose, :palate, :description, :price])
   end
 end

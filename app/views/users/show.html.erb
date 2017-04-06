@@ -1,5 +1,26 @@
-<%= @user.full_name%>
-<%@notes.each do |note|%>
-  <h3><%=link_to note.whisky.name, note_path(note)%></h3>
 
-<%end%>
+<div class="main-content ">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 content">
+      <div class="row">
+        <h2>My Notes</h2>
+        <div class="row row-eq-height">
+          <%@notes.each do |note|%>
+            <div class="col-sm-4 ">
+              <div class="card">
+                <%if note.whisky.image.thumb.url%>
+                  <%=image_tag note.whisky.image.thumb.url, :class=>'card-image img-zoom'%>
+                <%else%>
+                  <%=image_tag ("aberlour12yr.jpg") , :class=>'card-image img-zoom'%>
+                <%end%>
+                <div class="card-block">
+                  <h4><%=link_to note.whisky.name, note_path(note)%></h4>
+                </div>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

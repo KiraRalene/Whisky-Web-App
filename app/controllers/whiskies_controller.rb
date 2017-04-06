@@ -4,7 +4,6 @@ class WhiskiesController < ApplicationController
   def show
     @whisky = Whisky.find params[:id]
     @note = Note.new
-
   end
 
   def index

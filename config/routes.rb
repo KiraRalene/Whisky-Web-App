@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :notes, only: [:show]
+  resources :notes, only: [:show] do
+    resources :ratings, only: [:new, :create]
+  end
 
   resources :sessions, only: [:new, :create,] do
     delete :destroy, on: :collection

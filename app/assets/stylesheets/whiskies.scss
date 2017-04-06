@@ -1,3 +1,17 @@
 // Place all the styles related to the whiskies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$maroon:#43050e;
+$gold:#b2852f;
+$off-white:#f5f0ee;
+$yellow:#ffa100;
+
+.whisky-bottle {
+  width: 100%;
+}
+.padding {
+  padding: 60px;
+}
+.table {
+  border-bottom: solid 1px lightgrey;
+}

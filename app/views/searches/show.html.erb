@@ -22,14 +22,19 @@
           </div>
         </div>
 
-        <% if @search.search_whiskies.empty?%>
+        <% if !@search.search_whiskies%>
           <p> No Whiskies matched your search</p>
         <%else%>
+
 
           <%@search.search_whiskies.each do |whisky|%>
             <div class="col-sm-4">
               <div class="card">
-                <%=image_tag ('aberlour12yr.jpg'), :class=>'card-image'%>
+                <%if whisky.image.thumb.url%>
+                  <%=image_tag whisky.image.thumb.url, :class=>'card-image img-zoom'%>
+                <%else%>
+                  <%=image_tag ("aberlour12yr.jpg") , :class=>'card-image img-zoom'%>
+                <%end%>
                 <div class="card-block">
                   <h4><%=link_to whisky.name, whisky_path(whisky)%></h4>
                   <p>12yr<p>
