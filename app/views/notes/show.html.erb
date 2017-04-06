@@ -12,12 +12,12 @@
         </div>
         <div class="col-sm-7 padding">
           <h1><%= @note.whisky.name%></h2>
-            <p>Rating: <%= @note.rating%></p>
+            <p>Rating: <%= @note.rating.score%></p>
             <p>Color: <%= @note.color%></p>
             <p>Nose: <%= @note.nose%></p>
             <p>Palate: <%= @note.palate%></p>
             <p>Description: <%= @note.description%></p>
-            <p>Price: <%= @note.price%></p>
+            <p>Price: $<%= @note.price%></p>
         </div>
       </div>
     </div>

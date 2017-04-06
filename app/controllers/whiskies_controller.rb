@@ -4,6 +4,7 @@ class WhiskiesController < ApplicationController
   def show
     @whisky = Whisky.find params[:id]
     @note = Note.new
+    @rating = @whisky.ratings.sum(:score) / @whisky.ratings.size
   end
 
   def index
@@ -48,7 +49,7 @@ class WhiskiesController < ApplicationController
   private
 
   def whisky_params
-    params.require(:whisky).permit([:name, :distillery, :age, :cask, :kind, :abv, :price, :image])
+    params.require(:whisky).permit([:name, :distillery, :age, :cask, :kind, :abv, :price, :image, :details])
   end
 
   def find_whisky

@@ -11,6 +11,9 @@ class NotesController < ApplicationController
     @note = Note.new note_params
     @note.user = current_user
     @note.whisky = @whisky
+    @note.rating = Rating.new
+    @note.rating.whisky = @whisky
+    @note.rating.score = params[:note] [:rating]
     # @note.rating.score = params[:note][:rating].to_i
     if @note.save
       redirect_to note_path(@note), notice: 'Note created!'
