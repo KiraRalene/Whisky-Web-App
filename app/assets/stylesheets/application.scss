@@ -18,6 +18,8 @@
  @import "whiskies.scss";
  @import "notes.scss";
  @import "searches.scss";
+ @import "users.scss";
+ @import "sessions.scss";
 
  $maroon:#43050e;
  $gold:#b2852f;
@@ -29,6 +31,7 @@
 p, a, td, th, h1 {
   color: black;
 }
+
 h1 {
   font-family: 'Lora', serif;
 }
@@ -52,7 +55,11 @@ a:hover {
 }
 .navbar.navbar-default li a {
   color: #dec9b4;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 300;
+}
+.navbar.navbar-default li a:hover {
+  color: #efe2d5;
 }
 
 .navbar.navbar-default .navbar-collapse {
@@ -93,6 +100,13 @@ a:hover {
   border-radius: 5px;
   background-color: rgba(1,1,1,0);
 }
+.btn-second {
+  margin-top: 15px;
+  color:$maroon;
+  border: 2px solid $maroon;
+  border-radius: 5px;
+  background-color: rgba(1,1,1,0);
+}
 
 //Whisky Index **ALL GLOBAL
 .secondary-jumbo {
@@ -111,12 +125,17 @@ a:hover {
   background-color: white;
   min-height: 100vh;
 }
+.whisky-thumb {
+  display: flex;
+  justify-content: center;
+}
 .card-image {
   padding: 20px;
-  width: 100%;
+  height: 300px;
+  min-width: 80%;
 }
 .card-image-bg {
-  width: 110%
+  width: 110%;
 }
 .card {
   padding: 23px;
@@ -178,4 +197,14 @@ a:hover {
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);
+}
+.rating {
+  border: solid $maroon 4.5px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }

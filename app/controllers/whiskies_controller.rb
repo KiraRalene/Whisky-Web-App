@@ -4,7 +4,9 @@ class WhiskiesController < ApplicationController
   def show
     @whisky = Whisky.find params[:id]
     @note = Note.new
-    @rating = @whisky.ratings.sum(:score) / @whisky.ratings.size
+    if @whisky.ratings.size > 0
+      @rating = @whisky.ratings.sum(:score) / @whisky.ratings.size
+    end
   end
 
   def index

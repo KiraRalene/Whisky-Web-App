@@ -28,11 +28,13 @@
           <%@whiskies.each do |whisky|%>
             <div class="col-sm-4 ">
               <div class="card">
-                <%if whisky.image.thumb.url%>
-                  <%=image_tag whisky.image.thumb.url, :class=>'card-image img-zoom'%>
-                <%else%>
-                  <%=image_tag ("aberlour12yr.jpg") , :class=>'card-image img-zoom'%>
-                <%end%>
+                <div class="whisky-thumb">
+                  <%if whisky.image.thumb.url%>
+                    <%=image_tag whisky.image.thumb.url, :class=>'card-image img-zoom'%>
+                  <%else%>
+                    <%=image_tag ("aberlour12yr.jpg") , :class=>'card-image img-zoom'%>
+                  <%end%>
+                </div>
                 <div class="card-block">
                   <h4><%=link_to whisky.name, whisky_path(whisky)%></h4>
 
@@ -43,10 +45,7 @@
         </div>
 
       </div>
-      <%= form_tag whiskies_path, :method  => 'get' do %>
-        <%= text_field_tag :search, params[:search]%>
-        <%= submit_tag "Search", :class=>"btn "%>
-      <%end%>
+
     </div>
   </div>
 </div>

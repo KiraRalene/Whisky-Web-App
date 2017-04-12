@@ -27,16 +27,13 @@
 
           <ul class="nav navbar-nav">
             <li>
-              <%=link_to 'Home', root_path%>
+              <%=link_to 'HOME', root_path%>
             </li>
             <li>
-              <%=link_to 'Whiskies', whiskies_path%>
+              <%=link_to 'WHISKY', whiskies_path%>
             </li>
             <li>
-              <%=link_to 'Top 10', whiskies_path%>
-            </li>
-            <li>
-              <%=link_to 'Advanced Search', new_search_path%>
+              <%=link_to 'ADVANCED SEARCH', new_search_path%>
             </li>
 
           </ul>
@@ -45,24 +42,24 @@
             <li>
               <% if user_signed_in? %>
                 <li>
-                    <%=link_to "#{current_user.full_name}", user_path(current_user)%>
+                    <%=link_to "#{current_user.full_name.upcase}", user_path(current_user)%>
                  </li>
                  <li>
                   <%= link_to sessions_path('Sign Out'), method: :delete do %>
-                    <span class="glyphicon glyphicon-log-in"></span>Sign Out
+                    <span class="glyphicon glyphicon-log-in"></span>SIGN OUT
                   <% end %>
                 </li>
 
               <%else%>
                 <li>
                   <%= link_to new_user_path('Sign Up') do %>
-                    <span class="glyphicon glyphicon-user"></span> Sign Up
+                    <span class="glyphicon glyphicon-user"></span> SIGN UP
                   <% end %>
                 </li>
 
                 <li>
                   <%= link_to new_session_path('Sign In') do %>
-                    <span class="glyphicon glyphicon-log-in"></span> Sign In
+                    <span class="glyphicon glyphicon-log-in"></span> SIGN IN
                   <% end %>
                 </li>
               <%end%>
